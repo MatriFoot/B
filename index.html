@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Russia — TOMSK | Руководство</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    line-height: 1.7;
+    font-size: 17px;
+    padding-bottom: 60px;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff; border-bottom: 1px solid #ddd;
+    overflow-x: auto; white-space: nowrap;
+    padding: 10px 12px;
+  }
+  nav a {
+    display: inline-block; padding: 6px 14px; margin-right: 4px;
+    text-decoration: none; color: #333; font-size: 14px; font-weight: 600;
+    border-radius: 6px; transition: background 0.2s;
+  }
+  nav a:hover { background: #e8e8e8; }
+  nav a.active { background: #2563eb; color: #fff; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 24px; margin-bottom: 16px; padding-bottom: 8px;
+    border-bottom: 2px solid #2563eb; color: #1a1a1a;
+  }
+  h3 { font-size: 19px; margin: 20px 0 10px; color: #333; }
+  .card {
+    background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;
+    padding: 16px; margin-bottom: 14px;
+  }
+  .card h4 { font-size: 17px; margin-bottom: 6px; color: #1a1a1a; }
+  .warn { border-left: 4px solid #dc2626; }
+  .ok { border-left: 4px solid #16a34a; }
+  .key { border-left: 4px solid #2563eb; }
+  .tag {
+    display: inline-block; background: #e0e7ff; color: #3730a3;
+    font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 15px;
+  }
+  .tag-r { background: #fee2e2; color: #991b1b; }
+  .tag-g { background: #dcfce7; color: #166534; }
+  code {
+    background: #f1f1f1; padding: 2px 6px; border-radius: 4px;
+    font-family: 'Courier New', monospace; font-size: 15px;
+  }
+  .code-block {
+    background: #f8f8f8; border: 1px solid #ddd; border-radius: 6px;
+    padding: 12px; margin: 8px 0; font-family: 'Courier New', monospace;
+    font-size: 14px; white-space: pre-wrap; overflow-x: auto;
+  }
+  ul { padding-left: 20px; margin: 8px 0; }
+  li { margin-bottom: 6px; }
+  .sub { color: #666; font-size: 15px; margin-top: 4px; }
+  .punish { color: #dc2626; font-weight: 600; }
+  .grp-title {
+    font-size: 18px; font-weight: 700; margin: 18px 0 8px;
+    padding: 6px 12px; background: #eff6ff; border-radius: 6px;
+  }
+  .top-btn {
+    position: fixed; bottom: 20px; right: 20px; z-index: 99;
+    background: #2563eb; color: #fff; border: none; border-radius: 50%;
+    width: 44px; height: 44px; font-size: 20px; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 15px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+  th { background: #f0f4ff; font-weight: 600; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#terms">РП термины</a>
+  <a href="#rk">РК (3 формы)</a>
+  <a href="#radio">Рация /d</a>
+  <a href="#news">Пресс-центр</a>
+  <a href="#hier">Иерархия</a>
+  <a href="#convoy">Конвой</a>
+  <a href="#sit">РП ситуации</a>
+  <a href="#kotp">КоТП</a>
+</nav>
+
+<main>
+
+<!-- ===== РП ТЕРМИНЫ ===== -->
+<section id="terms">
+<h2>РП термины — самые сложные</h2>
+
+<div class="card key">
+  <h4><span class="tag">DM</span> — DeathMatch</h4>
+  <p>Убийство без причины.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">DB</span> — DriveBy</h4>
+  <p>Убийство машиной или из машины.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">SK</span> — SpawnKill</h4>
+  <p>Убийство при спавне (появлении игрока).</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ТДМ</span> — MassDM</h4>
+  <p>Массовый ДМ — убийство большого количества игроков без РП-причины.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ПГ</span> — PowerGaming</h4>
+  <p>Изображение из себя героя. Например: 1 без оружия против 5 людей у которых оно есть.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">MG</span> — MetaGaming</h4>
+  <p>Рассказы из реальной жизни в игровой чат.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">TK</span> — TeamKill</h4>
+  <p>Убийство своих союзников. Например: состоите в ГИБДД и убиваете своего напарника/сотрудника.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">УРП</span> — Уход от РП</h4>
+  <p>Намеренное избегание отыгровки РП-ситуации.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ФР</span> — ФастРелоад</h4>
+  <p>Баг с быстрой перезарядкой.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ФМ</span> — ФастМув</h4>
+  <p>Баг с быстрым перемещением.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ФФ</span> — Friendly Fire</h4>
+  <p>Нанесение урона по своим.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ПК</span> — PlayerKill</h4>
+  <p>Смерть игрока.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ФК</span> — FastConnect</h4>
+  <p>Фаст Коннект.</p>
+</div>
+
+<div class="card key">
+  <h4><span class="tag">ЕПП</span> — Езда по полям</h4>
+  <p>Езда по полям.</p>
+</div>
+
+<h3>Базовые термины</h3>
+<div class="card">
+  <h4><span class="tag">RP</span> — RolePlay</h4>
+  <p>Когда вы отыгрываете свою роль по РП.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">ЗЗ</span> — GreenZone</h4>
+  <p>Зелёная зона.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">БХ</span> — BunnyHop</h4>
+  <p>Бег с прыжком.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">ТП</span> — Teleport</h4>
+  <p>Телепортация.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">Транслит</span></h4>
+  <p>Когда человек пишет русские слова английскими буквами (например: <code>poka privet</code>).</p>
+</div>
+
+<h3>Наказания</h3>
+<div class="card warn">
+  <h4><span class="tag-r">BAN</span> — Banned</h4>
+  <p>Наказание, выданное НонРП-персонажем (Администратором). После этого игрок лишается возможности играть на данном аккаунте до окончания наказания.</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">WARN</span></h4>
+  <p>Наказание, после которого игрок не сможет вступить ни в одну фракцию. После истечения срока — можно вступить в любую.</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">KICK</span></h4>
+  <p>Игрока выкидывает с сервера (AFK, NonRP-сон и т.д.).</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">MUTE</span></h4>
+  <p>Ограничение писать что-либо в чат (NonRP / RP чат).</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">FORT DEMORGAN</span></h4>
+  <p>Тюрьма, из которой невозможно выбраться при помощи РП-персонажа (Адвоката и т.д.).</p>
+</div>
+
+<h3>Прочее</h3>
+<div class="card">
+  <h4><span class="tag">OOC</span> — Out of Character</h4>
+  <p>Всё, что относится к реальному миру. Пишется в <code>/fn</code> <code>/rn</code> <code>/n</code>.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">IC</span> — In Character</h4>
+  <p>Всё, что касается виртуального мира игры.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">AFK</span> — Away From Keyboard</h4>
+  <p>Ушёл от игрового устройства.</p>
+</div>
+<div class="card">
+  <h4><span class="tag">ROLE PLAY NICKNAME</span></h4>
+  <p>Имя_Фамилия. Пример: <code>Andrey_Kalashnikov</code>.</p>
+</div>
+
+<h3>Сокращения организаций</h3>
+<div class="card">
+<ul>
+  <li><strong>ГИБДД</strong> — Государственная инспекция безопасности дорожного движения</li>
+  <li><strong>ГТРК</strong> — Государственная телевизионная радиовещательная компания</li>
+  <li><strong>КоАП</strong> — Кодекс об административных правонарушениях</li>
+  <li><strong>МВД</strong> — Министерство внутренних дел</li>
+  <li><strong>УМВД</strong> — Управление Министерством внутренних дел</li>
+  <li><strong>СМИ</strong> — Средства массовой информации</li>
+  <li><strong>ФСИН</strong> — Федеральная служба исполнения наказаний</li>
+  <li><strong>ОПГ</strong> — Организованная преступная группировка</li>
+</ul>
+</div>
+
+<h3>Игровой сленг</h3>
+<div class="card">
+<ul>
+  <li><strong>Байт</strong> — провокация</li>
+  <li><strong>ГГ</strong> — хорошая игра</li>
+  <li><strong>Джайл</strong> — ограничения, накладываемые на роль персонажа во время РП</li>
+  <li><strong>Законник</strong> — представители закона на Black Russia</li>
+  <li><strong>Инвайт</strong> — приглашение</li>
+  <li><strong>Капт</strong> — захватить территорию</li>
+  <li><strong>КК / qq</strong> — приветствие</li>
+  <li><strong>МП / ГМП</strong> — мероприятие или глобальное мероприятие</li>
+  <li><strong>Опра</strong> — опровергнуть обвинения</li>
+  <li><strong>Откат</strong> — видеозапись, служащая доказательством о действиях пользователя</li>
+  <li><strong>Фама</strong> — группировка внутри игры</li>
+  <li><strong>Хелпер</strong> — игровой помощник</li>
+  <li><strong>Штат</strong> — место действия игры Black Russia</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== РК ===== -->
+<section id="rk">
+<h2>РК — в 3 формах</h2>
+
+<div class="card warn">
+  <h4><span class="tag-r">РК 1</span> — возвращение на место смерти</h4>
+  <p>Возвращение на место, где тебя убили.</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">РК 2</span> — RevengeKill</h4>
+  <p>Убийство игрока за то, что он убил тебя.</p>
+</div>
+<div class="card warn">
+  <h4><span class="tag-r">РК 3</span> — RepeatKill</h4>
+  <p>Убийство одного и того же игрока 2+ раза.</p>
+</div>
+
+<div class="card key">
+  <h4>Пример из РП-ситуации</h4>
+  <p>«Сотрудник нарушил два вида РК — возвращение на место смерти и убийство с целью мести. Я уволю данного сотрудника.»</p>
+</div>
+</section>
+
+<!-- ===== РАЦИЯ /d ===== -->
+<section id="radio">
+<h2>Рация департамента (/d)</h2>
+<p>Рация департамента (<code>/d</code>) — канал связи для координации между государственными структурами, взаимодействия организаций и передачи оперативной информации.</p>
+
+<h3>Разрешается</h3>
+<div class="card ok">
+<ul>
+  <li>Использовать государственную волну вещания для официальных объявлений.</li>
+  <li>Координировать действия и взаимодействовать с другими организациями.</li>
+  <li>Уведомлять о поданных заявлениях на перевод сотрудников.</li>
+  <li>Обсуждать РП-ситуации, требующие согласования.</li>
+</ul>
+</div>
+
+<h3>Запрещается</h3>
+<div class="card warn">
+<ul>
+  <li>Размещать предложения о продаже, покупке или обмене имущества.</li>
+  <li>Вступать в споры и конфликты, организовывать дискуссии.</li>
+  <li>Использовать скобки для OOC-общения.</li>
+  <li>Применять MetaGaming.</li>
+  <li>Нарушать субординацию и игнорировать деловой стиль общения.</li>
+</ul>
+</div>
+
+<div class="card warn">
+  <p class="punish">Наказание: блокировка чата на 30 минут. Также могут быть выданы должностные выговоры или понижение в ранге. Permban в случае слива.</p>
+</div>
+
+<h3>Идентификация сотрудников</h3>
+<div class="card">
+  <p>Обращение по ID игрока, так как имена персонажей по РП неизвестны. Их можно заменить на «Жетон» или «Бейджик» — для Правительства, СМИ, ЦБ. В случае бейджиков можно использовать имя сотрудника, но писать без нижнего подчёркивания (<code>_</code>).</p>
+</div>
+
+<h3>Строго запрещено — примеры</h3>
+<div class="card warn">
+  <p><strong>Игнорировать систему тегов:</strong></p>
+  <div class="code-block">/d ФСИН откройте ворота, адвокат приехал</div>
+</div>
+<div class="card warn">
+  <p><strong>Нарушать правила сервера:</strong></p>
+  <div class="code-block">/d [ФСБ] to [МО] МЫ ЕДЕМ С ПРОВЕРКОЙ!!!!!!!!!</div>
+</div>
+<div class="card warn">
+  <p><strong>Покупать, продавать или обменивать имущество:</strong></p>
+  <div class="code-block">/d [УМВД] to [ALL] Продам дом в Батырево</div>
+</div>
+<div class="card warn">
+  <p><strong>Переходить на личности, устраивать конфликты:</strong></p>
+  <div class="code-block">/d [МО] to [ГИБДД] Если вы нам не поможете, то мы оставим вас без боеприпасов</div>
+</div>
+<div class="card warn">
+  <p><strong>Использовать канал как OOC-чат:</strong></p>
+  <div class="code-block">/d [ФСБ] to [ФСИН] (( Не смогу вам помочь, выхожу из игры ))</div>
+</div>
+<div class="card warn">
+  <p><strong>MetaGaming:</strong></p>
+  <div class="code-block">/d Админы помогите</div>
+</div>
+<div class="card warn">
+  <p><strong>Несоблюдение субординации:</strong></p>
+  <div class="code-block">/d [Пра-во] to [МО] Полкан, привези матов, а то нам убивать нечем.</div>
+</div>
+<div class="card warn">
+  <p><strong>Игнорировать приказы ФСБ / Правительства:</strong></p>
+  <div class="code-block">/d [УМВД] to [ФСБ] построение невозможно, нету состава в области.</div>
+</div>
+
+<div class="card key">
+  <p><strong>Примечание:</strong> используйте теги при обращении к другим организациям (пример: <code>[ТЕГ] to [ТЕГ]</code>). Соблюдайте субординацию и деловой стиль общения.</p>
+</div>
+</section>
+
+<!-- ===== ПРЕСС-ЦЕНТР ===== -->
+<section id="news">
+<h2>Пресс-центр (/news)</h2>
+<p>Пресс-центр (<code>/news</code>) предназначен для информирования жителей области о проведении мероприятий или собеседований.</p>
+
+<h3>Общие правила</h3>
+<div class="card">
+<ol>
+  <li>Доступ к команде имеют только лидеры и заместители государственных структур.</li>
+  <li>Использование команды разрешено исключительно для анонсов мероприятий и собеседований в государственные фракции.</li>
+  <li>Проведение мероприятий — строго с 8:00 до 23:00 по московскому времени.</li>
+  <li>Минимальная продолжительность — 30 минут.</li>
+  <li>Максимальная продолжительность — 60 минут.</li>
+  <li>Перерыв между собеседованиями своей фракции — не менее 15 минут.</li>
+  <li>Перерыв между собеседованиями других фракций — 5 минут.</li>
+</ol>
+</div>
+
+<h3>Порядок использования (на примере собеседования)</h3>
+<div class="card key">
+<ol>
+  <li><strong>Активируйте команду</strong> <code>/news</code> — лидер или заместитель вводит команду, открывается окно управления.</li>
+  <li><strong>Создайте мероприятие:</strong> выберите «Управление мероприятием» → «Создать мероприятие». В графе «Название» укажите цель (например, «Собеседование в отдел полиции #2»).</li>
+  <li><strong>Настройте параметры:</strong> укажите время из доступного списка. В графе «Описание» — требования к кандидатам (наличие паспорта, медкарты, минимальный год прописки и т.д.). Отметьте место проведения, находясь на указанной локации (например, вход в УМВД).</li>
+  <li><strong>Подтвердите создание:</strong> мероприятие автоматически запускается в назначенное время, объявление публикуется в пресс-центре.</li>
+  <li><strong>Завершение:</strong> после 30–60 минут завершите вручную через «Управление мероприятием» → «Закончить мероприятие».</li>
+</ol>
+</div>
+
+<div class="card warn">
+  <p><strong>Важно:</strong> точка собеседования указывается обязательно в наружном интерьере, прямо у входа. Внутри здания точка указывается некорректно.</p>
+</div>
+
+<h3>Запрещено</h3>
+<div class="card warn">
+<ol>
+  <li>Использовать пресс-центр не по назначению.</li>
+  <li>Допускать OOC (MG) при создании мероприятий.</li>
+  <li>Использовать нецензурную лексику.</li>
+  <li>Игнорировать заполнение графы «Описание».</li>
+  <li>Допускать грамматические ошибки в тексте.</li>
+  <li>Применять пресс-центр для личных целей.</li>
+</ol>
+</div>
+</section>
+
+<!-- ===== ИЕРАРХИЯ ===== -->
+<section id="hier">
+<h2>Иерархия государственных структур</h2>
+<p>В данном разделе представлена иерархия государственных организаций сервера TOMSK.</p>
+
+<div class="grp-title">Органы социальной гражданской ответственности</div>
+
+<div class="card key">
+  <h4>Правительство</h4>
+  <p>Высший орган исполнительной власти региона. Независим, сотрудничает с ФСБ.</p>
+</div>
+
+<div class="card">
+  <h4>Больница</h4>
+  <p>Медицинское учреждение, занимающееся лечением пациентов. Подчиняется всем вышеперечисленным структурам на законодательном уровне, прямым начальством является Губернатор.</p>
+</div>
+
+<div class="card">
+  <h4>Средства массовой информации (СМИ)</h4>
+  <p>Государственная телерадиокомпания, выполняющая функции по созданию и распространению телерадиопрограмм. Является независимой организацией, подчиняется силовым ведомствам.</p>
+</div>
+
+<div class="grp-title">Правоохранительные органы</div>
+
+<div class="card key">
+  <h4>Федеральная Служба Безопасности (ФСБ)</h4>
+  <p>Проводит оперативно-розыскные мероприятия, направленные на предотвращение, пресечение и раскрытие шпионажа, терроризма, организованной преступности, коррупции, контрабанды, а также незаконного оборота оружия и наркотиков. Независимый орган, сотрудничает с правительством региона. <strong>Подчиняется исключительно губернатору области.</strong></p>
+</div>
+
+<div class="card">
+  <h4>Управление Министерства Внутренних Дел (УМВД)</h4>
+  <p>Занимается оперативно-розыскной деятельностью. <strong>Подчиняется</strong> правительству региона и ФСБ, сотрудничает с ГИБДД и ФСИН.</p>
+</div>
+
+<div class="card">
+  <h4>Государственная Инспекция Безопасности Дорожного Движения (ГИБДД)</h4>
+  <p>Контролирует и регулирует дорожное движение, выявляет нарушения ПДД. <strong>Подчиняется</strong> правительству региона и ФСБ, взаимодействует с УМВД.</p>
+</div>
+
+<div class="grp-title">Органы общественной безопасности</div>
+
+<div class="card key">
+  <h4>Федеральная Служба Исполнения Наказаний (ФСИН)</h4>
+  <p>Осуществляет надзор за исполнением уголовных наказаний, отвечает за содержание подозреваемых и обвиняемых в преступлениях. <strong>Подчиняется</strong> правительству региона, частично подчиняется ФСБ. Сотрудничает с УМВД.</p>
+</div>
+
+<div class="card">
+  <h4>Министерство Обороны (МО)</h4>
+  <p>Участвует в охране общественного порядка и обеспечении безопасности. <strong>Подчиняется</strong> правительству региона, частично подчиняется ФСБ.</p>
+</div>
+</section>
+
+<!-- ===== КОНВОЙ ===== -->
+<section id="convoy">
+<h2>Правила конвоя (ФСИН)</h2>
+
+<h3>1. Основные правила</h3>
+<div class="card key">
+  <p><strong>1.1</strong> Перед отправкой автозака в УМВД, сотрудники ФСИН обязаны связаться с ними через департамент и сообщить о выезде конвоя:</p>
+  <div class="code-block">/d [ФСИН] to [УМВД] На связь...
+/d [УМВД] to [ФСИН] На связи
+/d [ФСИН] to [УМВД] Выезжаем к вам для конвоирования заключённых.
+/d [УМВД] to [ФСИН] Приняли, конец связи.
+/d [ФСИН] to [УМВД] Конец связи.</div>
+</div>
+
+<div class="card">
+  <p><strong>1.2</strong> Конвой должен состоять из 3–5 сотрудников ФСИН, из них должен присутствовать хотя бы один капитан (7).</p>
+</div>
+<div class="card">
+  <p><strong>1.3</strong> При конвоировании у сотрудников должно быть боевое оружие, бронежилеты и рем. комплект.</p>
+</div>
+<div class="card ok">
+  <p><strong>1.4</strong> При нападении на автозак сотрудникам ФСИН <strong>разрешено нарушать ПДД</strong>.</p>
+</div>
+<div class="card">
+  <p><strong>1.5</strong> Каждая остановка во время пути фиксируется в рацию организации:</p>
+  <div class="code-block">/r [тег] Совершена остановка конвоя на (указать место, например, трасса).</div>
+</div>
+<div class="card">
+  <p><strong>1.6</strong> Во время остановки автозак разрешено покинуть только одному сотруднику, другой всегда должен находиться в машине.</p>
+</div>
+<div class="card warn">
+  <p><strong>1.7</strong> Во время нападения на автозак патрульная машина должна любой ценой отрезать нарушителей от заключённых.</p>
+</div>
+
+<h3>2. Разрешается</h3>
+<div class="card ok">
+  <p><strong>2.1</strong> Открывать огонь на поражение при экстренных ситуациях (побег заключённых / нападение на автозак).</p>
+</div>
+<div class="card ok">
+  <p><strong>2.2</strong> Изменить план следования в экстренной ситуации (нападение на автозак).</p>
+</div>
+
+<h3>3. Состав для перевозки</h3>
+<div class="card">
+  <p><strong>3.1</strong> Для перевозки нужен один автозак и одна патрульная машина организации.</p>
+</div>
+<div class="card">
+  <p><strong>3.2</strong> Минимальный состав — 3 человека: два в автозаке, один в патрульной машине.</p>
+</div>
+<div class="card">
+  <p><strong>3.3</strong> Автозак всегда должна сопровождать патрульная машина ФСИН / УМВД.</p>
+</div>
+<div class="card warn">
+  <p><strong>3.4</strong> Начинать перевозку без сопровождения патрульной машины <strong>запрещено</strong>.</p>
+</div>
+</section>
+
+<!-- ===== РП СИТУАЦИИ ===== -->
+<section id="sit">
+<h2>РП ситуации — самые сложные</h2>
+
+<div class="card warn">
+  <h4>3. Сотрудник нарушил два вида РК</h4>
+  <p><strong>Вопрос:</strong> Ваш сотрудник вернулся на место своей смерти и убил того, кто его убил. Что он нарушил?</p>
+  <p><strong>Ответ:</strong> Сотрудник нарушил два вида РК — возвращение на место смерти и убийство с целью мести. Уволю данного сотрудника.</p>
+</div>
+
+<div class="card warn">
+  <h4>12. Сотрудник с читом полетел в небо</h4>
+  <p><strong>Вопрос:</strong> Вы проводили строй, и ваш сотрудник с читом полетел в небо. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Птица полетела, оповещу администрацию.</p>
+</div>
+
+<div class="card warn">
+  <h4>13. SMS о самоубийстве сотрудника</h4>
+  <p><strong>Вопрос:</strong> Вам в <code>/sms</code> приходит сообщение, что ваш сотрудник хочет спрыгнуть с крыши. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Ничего не сделаю, так как SMS = NonRp.</p>
+</div>
+
+<div class="card warn">
+  <h4>14. Сотрудник спрыгнул с крыши и использовал аптечку</h4>
+  <p><strong>Вопрос:</strong> Сотрудник спрыгнул с крыши, резко использовал аптечку и побежал дальше. Что он нарушил?</p>
+  <p><strong>Ответ:</strong> Данный сотрудник нарушил PowerGaming (PG). Уволю его.</p>
+</div>
+
+<div class="card warn">
+  <h4>28. Похищение с подписью</h4>
+  <p><strong>Вопрос:</strong> Вас похищают бандиты и везут в лес. Требуют подписать заявление об уходе по собственному желанию, но они знают вашу подпись. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Подпишу своей подписью, но добавлю какой-нибудь символ, чтобы подпись была недействительной в заявлении.</p>
+</div>
+
+<div class="card warn">
+  <h4>30. Индикатор здоровья — NonRp</h4>
+  <p><strong>Вопрос:</strong> Сотрудник говорит, что у него мало здоровья и требует аптечку, но его индикатор показывает полный HP. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Не смогу увидеть, сколько у него здоровья — индикатор не относится к РП-процессу. Молча дам аптечку.</p>
+</div>
+
+<div class="card warn">
+  <h4>32. Сотрудник переоделся в чужую форму</h4>
+  <p><strong>Вопрос:</strong> Сотрудник Egor_Ship переоделся и пошёл работать в форме вашего сотрудника. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Сначала надо спросить, где я был. Если не в раздевалке — ничего не сделаю, так как не узнал, что он переоделся. Если в раздевалке — спросить, знаю ли я, что это Egor_Ship. Если знаю — попросить паспорт и уволить по проф. непригодности. Если не знаю — ничего не сделаю.</p>
+</div>
+
+<div class="card warn">
+  <h4>42. Сотрудник выдал 6 звёзд за «Тапок»</h4>
+  <p><strong>Вопрос:</strong> Ваш сотрудник выдал случайному игроку 6 звёзд по причине: «Тапок». Ваши действия?</p>
+  <p><strong>Ответ:</strong> Выдам увольнение по проф. непригодности.</p>
+</div>
+
+<div class="card warn">
+  <h4>11. Сотрудник на мини-карте под мостом</h4>
+  <p><strong>Вопрос:</strong> Вы ехали на мосту и на мини-карте увидели, что под мостом ваш сотрудник. Ваши действия?</p>
+  <p><strong>Ответ:</strong> Ничего не сделаю, так как мини-карта — это NonRp.</p>
+</div>
+
+<div class="card warn">
+  <h4>44. ОПГ требует перевод денег</h4>
+  <p><strong>Вопрос:</strong> После рабочего дня вас перехватывает ОПГ: «Мы отпустим вас, если переведёте 1кк на счёт». Ваши действия?</p>
+  <p><strong>Ответ:</strong> Нужно отыгрывать РП — выполнить требования похитителей, если нет возможности сопротивляться или позвать на помощь.</p>
+</div>
+</section>
+
+<!-- ===== КоТП ===== -->
+<section id="kotp">
+<h2>КоТП — Кодекс о трудовых проступках</h2>
+
+<div class="grp-title">Глава 1. Взятка</div>
+<div class="card warn">
+  <p><strong>1.1</strong> Передача взятки сотруднику ФСИН — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>1.2</strong> Попытка или намёк на взятку — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 2. Убийство</div>
+<div class="card warn">
+  <p><strong>2.1</strong> Убийство заключённого — <span class="punish">пожизненное (45 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>2.2</strong> Убийство сотрудника ФСИН — <span class="punish">пожизненное (45 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>2.3</strong> Убийство адвоката/посетителей — <span class="punish">пожизненное (45 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 3. Бунты и неадекватное поведение</div>
+<div class="card warn">
+  <p><strong>3.1</strong> Попытка бунта — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>3.2</strong> Драка между заключёнными — <span class="punish">2 года (30 мин) + выговор (оба)</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>3.3</strong> Нападение на сотрудника ФСИН — <span class="punish">пожизненное (45 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>3.4</strong> Попытка побега — <span class="punish">пожизненное (45 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 4. Оскорбление сотрудников и посетителей</div>
+<div class="card warn">
+  <p><strong>4.1</strong> Оскорбление сотрудника ФСИН — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>4.2</strong> Оскорбление адвоката/посетителей — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>4.3</strong> Неподчинение сотруднику ФСИН — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 5. Оскорбление заключённых</div>
+<div class="card warn">
+  <p><strong>5.1</strong> Оскорбление заключённого — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>5.2</strong> Оскорбление сотрудника ФСИН — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>5.3</strong> Оскорбление адвоката/посетителей — <span class="punish">1 год (15 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 6. Запрещённые вещества и оружие</div>
+<div class="card warn">
+  <p><strong>6.1</strong> Употребление/хранение наркотиков — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>6.2</strong> Ношение оружия — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+
+<div class="grp-title">Глава 7. Неподчинение</div>
+<div class="card warn">
+  <p><strong>7.1</strong> Неподчинение сотруднику ФСИН — <span class="punish">2 года (30 мин) + выговор</span>.</p>
+</div>
+<div class="card warn">
+  <p><strong>7.2</strong> Повторное неподчинение — <span class="punish">до 3 лет</span>.</p>
+</div>
+</section>
+
+</main>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  const links = nav.querySelectorAll('a');
+  const sections = document.querySelectorAll('section');
+
+  function updateActive() {
+    let current = '';
+    sections.forEach(s => {
+      const rect = s.getBoundingClientRect();
+      if (rect.top < 120) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActive);
+  updateActive();
+</script>
+
+</body>
+</html>
